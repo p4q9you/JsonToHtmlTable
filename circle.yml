@@ -22,6 +22,7 @@ test:
     - find . -type f -regex ".*/artifacts/test-result-junit.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
     - sudo chmod a+x codecov_coverage_validation.sh
     - ./codecov_coverage_validation.sh
+    - curl -sSL https://download.sourceclear.com/ci.sh | sh
 deployment:
   npm:
     branch: master
